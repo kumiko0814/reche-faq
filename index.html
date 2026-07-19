@@ -209,6 +209,65 @@
   .a strong{color:var(--pink-4);font-weight:700}
   @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
+  /* ===== Results / social proof ===== */
+  .results{
+    margin:30px 0 6px;
+    background:linear-gradient(135deg,var(--blue-1),var(--pink-1));
+    border:1px solid var(--pink-2);
+    border-radius:26px;padding:28px 22px 26px;
+    box-shadow:var(--shadow-soft);
+  }
+  .results .rhead{text-align:center;margin-bottom:20px}
+  .results .rhead .sub{font-size:12px;color:var(--pink-4);font-weight:600;letter-spacing:.14em}
+  .results .rhead h2{
+    font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+    font-size:clamp(19px,4.8vw,24px);color:#42506a;margin-top:4px;
+  }
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .stat{
+    background:#fff;border-radius:20px;padding:20px 12px;text-align:center;
+    box-shadow:var(--shadow-soft);border:1px solid var(--line);
+  }
+  .stat .slabel{font-size:12px;color:var(--blue-4);font-weight:700;margin-bottom:9px}
+  .stat .pct{
+    font-family:"Zen Maru Gothic",sans-serif;font-weight:700;
+    font-size:30px;line-height:1;
+    background:linear-gradient(120deg,var(--blue-4),var(--pink-4));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .stat .pct small{font-size:14px}
+  .stat .big{
+    font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:#42506a;
+    font-size:15px;margin-top:7px;line-height:1.4;
+  }
+  .stat .big b{color:var(--pink-4)}
+  .voices{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:11px;margin-top:16px}
+  .voice{background:#fff;border-radius:16px;padding:15px 16px;border:1px solid var(--line);box-shadow:var(--shadow-soft)}
+  .voice .amt{
+    font-family:"Zen Maru Gothic",sans-serif;font-weight:700;color:var(--pink-4);font-size:19px;
+  }
+  .voice .amt span{font-size:11px;color:var(--ink-soft);font-weight:500;margin-left:4px}
+  .voice p{font-size:12.5px;color:var(--ink-soft);margin-top:7px;line-height:1.7}
+  .results .note{text-align:center;font-size:11px;color:var(--ink-soft);margin-top:16px;opacity:.85}
+  @media(max-width:560px){
+    .stat-row{grid-template-columns:1fr}
+    .stat{display:flex;align-items:center;gap:14px;text-align:left;padding:16px 18px}
+    .stat .slabel{margin-bottom:0;flex:none;width:82px}
+    .stat .pct{font-size:24px}
+    .stat .big{margin-top:0;flex:1;font-size:14px}
+  }
+
+  /* ===== Payment list inside answer ===== */
+  .paylist{margin:6px 0 4px;padding:0;list-style:none}
+  .paylist li{
+    display:flex;align-items:center;gap:9px;
+    padding:8px 12px;margin-bottom:6px;border-radius:11px;
+    background:var(--blue-1);font-size:13.5px;color:#42506a;font-weight:500;
+  }
+  .paylist li .dot{width:9px;height:9px;border-radius:3px;background:var(--pink-3);flex:none}
+  .paylist li b{color:var(--pink-4)}
+  .paynote{font-size:12px;color:var(--ink-soft);margin-top:6px}
+
   /* ===== Contact / footer ===== */
   .contact{
     margin:52px auto 0;text-align:center;
@@ -257,7 +316,49 @@
 </div>
 
 <main>
+  <!-- ============ 成果データ ============ -->
+  <section class="results" id="results">
+    <div class="rhead">
+      <span class="sub maru">REAL RESULTS</span>
+      <h2>生徒さんの、リアルな成果</h2>
+    </div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="slabel">月の平均利益</div>
+        <div class="pct">6<small>割が</small></div>
+        <div class="big">毎月 <b>15〜20万円</b> 以上</div>
+      </div>
+      <div class="stat">
+        <div class="slabel">初月の利益</div>
+        <div class="pct">6<small>割が</small></div>
+        <div class="big">初月 <b>7〜10万円</b> 以上</div>
+      </div>
+      <div class="stat">
+        <div class="slabel">スクール代の回収</div>
+        <div class="pct">6<small>割が</small></div>
+        <div class="big">長くても <b>半年でペイ</b></div>
+      </div>
+    </div>
+
+    <div class="voices">
+      <div class="voice">
+        <div class="amt">初月 97,000円<span>受講生アンケートより</span></div>
+        <p>「Re:cheに入って人生が変わりました。ローンも嵩んで迷ったけど、思い切って決断して本当に良かったです」</p>
+      </div>
+      <div class="voice">
+        <div class="amt">初月 120,000円<span>受講生アンケートより</span></div>
+        <p>「不用品を高く売る方法を学べました。自分ではただのお小遣い稼ぎにもなっていなかったと思います」</p>
+      </div>
+      <div class="voice">
+        <div class="amt">初月 125,502円<span>受講生アンケートより</span></div>
+        <p>「自分の感覚だけだと、相場や需要に合わない値付けをしてしまう。学べる環境に感謝しています」</p>
+      </div>
+    </div>
+    <p class="note">※ 受講生62名へのアンケート結果より。成果には個人差があります。</p>
+  </section>
+
   <nav class="chips">
+    <a href="#results">成果データ</a>
     <a href="#c1">はじめての方へ</a>
     <a href="#c2">費用・お支払い</a>
     <a href="#c3">仕入れ・在庫</a>
@@ -354,9 +455,26 @@
     </details>
 
     <details class="faq">
-      <summary class="q"><span class="qmark">Q</span><span class="qtext">分割でのお支払いはできますか？</span><span class="arrow"></span></summary>
+      <summary class="q"><span class="qmark">Q</span><span class="qtext">どんなお支払い方法がありますか？分割はできますか？</span><span class="arrow"></span></summary>
       <div class="a">
-        <p>はい、分割でのお支払いにも対応しています。ご希望の回数やご事情に合わせてご案内しますので、説明会・個別相談の際にお気軽にお申し付けください。</p>
+        <p>お支払いは<strong>柔軟にお受けしています</strong>。ご事情に合わせて、次の中からお選びいただけます。</p>
+        <ul class="paylist">
+          <li><span class="dot"></span>お振込</li>
+          <li><span class="dot"></span>クレジットカード（<b>最大24分割</b>）</li>
+          <li><span class="dot"></span>お振込 ＋ カード</li>
+          <li><span class="dot"></span>カード複数枚</li>
+          <li><span class="dot"></span>ローン（<b>最大36分割</b>）</li>
+          <li><span class="dot"></span>頭金払い</li>
+        </ul>
+        <p class="paynote">※ 下にいくほど金利は高くなります。あなたに合った無理のない方法を一緒に決めていきましょう。</p>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary class="q"><span class="qmark">Q</span><span class="qtext">分割払いだと、支払いが負担になって赤字になりませんか？</span><span class="arrow"></span></summary>
+      <div class="a">
+        <p>ご安心ください。分割の場合、<strong>最初の引き落としは約1.5ヶ月後</strong>。つまり、始めてから引き落としまでに準備の時間があります。</p>
+        <p>その間に<strong>2万円以上の利益</strong>を出せれば、初回の引き落とし時点でしっかり黒字。実際、<strong>引き落としが始まって赤字になった方は、これまで一人もいません</strong>。まずは最初の一歩を、私たちと一緒に踏み出しましょう。</p>
       </div>
     </details>
 
@@ -383,6 +501,15 @@
       <span class="cat-num">3</span>
       <div><span class="sub">STOCK & SOURCING</span><h2>仕入れ・在庫のこと</h2></div>
     </div>
+
+    <details class="faq">
+      <summary class="q"><span class="qmark">Q</span><span class="qtext">仕入れ先は信頼できますか？なぜ安定して仕入れられるのですか？</span><span class="arrow"></span></summary>
+      <div class="a">
+        <p>Re:cheは、古物市場「<strong>YBA GROUP（横浜ブランドオークション）</strong>」と<strong>提携している唯一のスクール</strong>です。ブランド品やアパレルを扱う本格的な古物市場に、受講生が実践の場としてアクセスできます。</p>
+        <p>さらに、<strong>企業との独占卸（どくせんおろし）を行っているのも弊社だけ</strong>。だからこそ、良品を安定的に・安心して仕入れられる環境が整っています。</p>
+        <p class="paynote">※ 出典：リユース経済新聞「古物市場、主婦も参加する時代」（2024/7/24）</p>
+      </div>
+    </details>
 
     <details class="faq">
       <summary class="q"><span class="qmark">Q</span><span class="qtext">在庫過多になって、家が在庫だらけになりませんか？</span><span class="arrow"></span></summary>
